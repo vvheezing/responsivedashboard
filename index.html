@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NYC ANIMALS</title>
+        <style>
+
+            
+        body {
+                background-color: #97baa0;
+            }
+
+            .dropdown {
+               
+                display: inline-block;
+                position: relative;
+
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                width: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                padding: 0;
+                z-index: 1;
+                
+                
+            }
+
+            .dropbtn {
+                color: black;
+                display: block;
+                text-decoration: none;
+                padding: 12px 16px;
+                
+                
+            }
+
+            .dropdown-content a {
+                color: black;
+                display: block;
+                text-decoration: none;
+                padding: 12px 16px;
+                text-align: center;
+                background-color: lightgrey;
+
+              
+                
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+
+            }
+
+            .dropdown-content a:hover {
+                background-color: lightgrey;
+            
+            }
+
+
+            .image.visible {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            h1 {
+                text-align: center;
+                font-size: 35px;
+                color: #154d25;
+                font-family: 'Tilt Neon', sans-serif;
+                background-color: lightgreen
+            }
+           
+
+
+            .toggle_divs {
+                background-color: gray;
+                height: 100px;
+                width: 100px;
+                margin-top: 10px;
+            }
+
+
+            
+        .image_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px; 
+            
+        }
+
+        .image_container .image {
+            width: 200px; 
+            margin-bottom: 20px; 
+            display: none; 
+            margin-top: 30px;
+           
+            
+        }
+
+        .back_color {
+            background-color: #154d25;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .image.visible {
+            display: block; 
+        }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+
+            .no-display {
+                display: none;
+            }
+
+        .image_caption {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 13px;
+            font-family: 'Tilt Neon', sans-serif;
+    
+            
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: transparent;
+            
+        }
+
+
+     @media (max-width: 900px) {
+    .image_container {
+      display: flex;
+      margin: 10px auto;
+    }
+  }
+
+    @media (max-width: 600px) {
+    .image_container {
+      display: block;
+      width: calc(100% - 80px);
+    
+    }
+}
+    
+    @media (max-width: 600px) {
+    .image {
+      padding-top: 15px;
+    }
+}
+
+        </style>
+
+        <h1>Craziest Animals Found in NYC Parks</h1>
+    </head>
+    <body>
+
+        <div class="dropdown">
+            <button class="dropbtn">Species Status</button>
+            <div id="dropdownContent" class="dropdown-content">
+                <button onclick="showImage('native')">Native</a>
+                <button onclick="showImage('exotic')">Exotic</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Animal Class</button>
+            <div id="dropdownContent2" class="dropdown-content">
+                <button onclick="showImage('mammal')">Mammal</a>
+                <button onclick="showImage('bird')">Bird</a>
+                <button onclick="showImage('amphibian')">Amphibian/Reptile</a>
+            </div>
+        </div>
+        
+
+        <div class="image_container">
+            <div id="boa" class="image exotic reptile">
+                <img src="images/boa.jpg">
+                <div class="image_caption">Boa Constrictor - found at Pelham Bay Park (BRONX) </div>
+            </div>
+            <div id="bobcat" class="image native mammal"> 
+                <img src="images/bob.jpg">
+                <div class="image_caption">Bobcat - found in Brookefield Park (STATEN ISLAND)</div>
+            </div>
+            <div id="cattle" class="image native mammal">
+                <img src="images/cattle.jpg">
+                <div class="image_caption">Cattle - found in Corona Park (QUEENS)</div>
+            </div>
+            <div id="eagle" class="image native bird">
+                <img src="images/eagle.jpg">
+                <div class="image_caption">Bald Eagle - found in Hart Island (BRONX)</div>
+            </div>
+            <div id="eel" class="image exotic amphibian">
+                <img src="images/eel.jpg">
+                <div class="image_caption">Asian Swamp Eel - found in Meadow Lake (QUEENS)</div>
+            </div>
+            <div id="peafowl" class="image exotic bird">
+                <img src="images/peafowl.jpg">
+                <div class="image_caption">Indian Peafowl - found at Seguine Mansion (STATEN ISLAND)</div>
+            </div>
+            <div id="chicken" class="image native bird">
+                <img src="images/chicken.jpg">
+                <div class="image_caption">Chicken - found in Maria Hernandez Park (BROOKLYN)</div>
+            </div>
+            <div id="tegu" class="image exotic amphibian">
+                <img src="images/tegu.jpg">
+                <div class="image_caption">Argentine Black and White Tegu - found in Crotona Park (BRONX)</div>
+            </div>
+            <div id="owl" class="image exotic bird">
+                <img src="images/owl.jpg">
+                <div class="image_caption">Eurasian Eagle Owl - found in Central Park (MANHATTAN)</div>
+            </div>
+            <div id="puma" class="image exotic mammal">
+                <img src="images/puma.jpg">
+                <div class="image_caption">Puma found at LaTourette Park - (STATEN ISLAND)</div>
+            </div>
+            <div id="turkey" class="image native bird">
+                <img src="images/turkey.jpg">
+                <div class="image_caption">Wild Turkey - found in Fort Washington Park (MANHATTAN)</div>
+            </div>
+            <div id="porpoise" class="image native mammal">
+                <img src="images/porpoise.jpg">
+                <div class="image_caption">Harbor Porpoise - found in Conference House Park (STATEN ISLAND)</div>
+            </div>
+        </div>
+
+
+        <script>
+
+    function showAllImages () {
+        var images = document.querySelectorAll('.image');
+        images.forEach(function(image) {
+            image.classList.add('visible');
+        });
+    }
+
+
+        
+        function showImage(category) {
+    var images = document.querySelectorAll('.image');
+    images.forEach(function(image) {
+        if (image.classList.contains(category)) {
+            image.classList.add('visible');
+        } else {
+            image.classList.remove('visible');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showAllImages();
+});
+
+window.onload = function() {
+    var dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(function(dropdown) {
+        var buttonWidth = dropdown.querySelector('.dropbtn').offsetWidth;
+        dropdown.querySelector('.dropdown-content').style.width = buttonWidth + 'px';
+    });
+    };
+
+
+        </script>
+
+
+
+
+
+        
+      
